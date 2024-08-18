@@ -13,6 +13,9 @@ const TodoList: React.FC = () => {
     ]);
     const [apiCount, setApiCount] = useState<number>(1);
 
+const completedTasks = todos.filter(todo => todo.completed).length;
+
+
 const addTodo = (text: string) => {
     const newTodo = { id: Date.now(), text, completed: false, isFromApi: false };
     setTodos([...todos, newTodo]);
@@ -88,8 +91,14 @@ return (
             completed={todo.completed}
             onToggle={() => toggleTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
+            isFromApi={todo.isFromApi}
         />
         ))}
+
+        <div className="todo-list__label">
+            Completed Tasks: {completedTasks}
+        </div>
+
         <input
             type="text"
             className="todo-list__input"

@@ -39,6 +39,11 @@ body {
   font-size: 16px;
   color: #666;
 }
+.todo-list__label {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #4caf4f;
+}
 
 .todo-item {
   display: flex;
@@ -66,10 +71,16 @@ body {
   margin-right: 10px;
 }
 .todo-item--completed .todo-item__text {
-  background-color: #e0ffe0;
   text-decoration: line-through;
   color: #999;
   opacity: 0.8;
+}
+.todo-item--api {
+  background-color: rgba(0, 121, 107, 0.1058823529);
+  border-left: 4px solid #00796b;
+}
+.todo-item:not(.todo-item--api) {
+  border-left: 4px solid #1976d2;
 }
 
 .api-integration {
